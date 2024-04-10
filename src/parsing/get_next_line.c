@@ -29,7 +29,7 @@ char	*reader(int fd, char *saver)
 	return (saver);
 }
 
-char	*mprotect(char *line, char **saver, int i)
+char	*lets_rolls(char *line, char **saver, int i)
 {
 	char	*oldptr;
 
@@ -56,7 +56,7 @@ char	*finalline(char *line, char **saver)
 	i = search_n(*saver, '\n');
 	if (i >= 0)
 	{
-		line = mprotect(line, saver, i);
+		line = lets_rolls(line, saver, i);
 		if (!line)
 			return (free(*saver), *saver = NULL, NULL);
 	}
