@@ -31,13 +31,14 @@ static size_t	ft_countword(char const *s, char c)
 	return (count);
 }
 
-void cleanup(char **matrix) {
+void	cleanup(char **lst)
+{
 	int	i;
 
 	i = 0;
-	while (matrix[i])
-		free(matrix[i++]);
-	free(matrix);
+	while (lst[i])
+		free(lst[i++]);
+	free(lst);
 }
 
 char	**filler(const char *s, char **lst, char c)

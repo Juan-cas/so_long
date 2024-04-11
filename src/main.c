@@ -27,7 +27,7 @@ int main (int argc, char **argv)
   status->next = NULL;
 
   map = init_parser(argv, &status);
-  solong(map);
+  solong(map, &status);
   matrix_clear(map);
   free(status);
   printf("all good");

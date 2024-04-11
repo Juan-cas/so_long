@@ -49,20 +49,13 @@ void assign_textures(t_data **data, int j)
 		exit(1);
 }
 
-void textures_init(t_data *data, char **map)
+void textures_init(t_data *data, t_objects **status, char **map)
 {
 	int j;
-	int windowheight;
-	int windowwidth;
-
-	windowheight = -1;
-	windowwidth = -1;
-	while(map[++windowheight]);
-	while(map[0][++windowwidth]);
 	j =	0;
 	while (j < 5)
 		assign_textures(&data, j++);
 
-	(*data).winysize = windowheight * 32;
-	(*data).winxsize = windowwidth * 32;
+	(*data).winysize = (*status)->map_lines * 32;
+	(*data).winxsize = (*status)->map_length * 32;
 }

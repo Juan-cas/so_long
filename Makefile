@@ -1,7 +1,8 @@
 # Compiler and flags
 CC := gcc
 CFLAGS := -Wall -Wextra -Werror -g3 #-fsanitize=address,undefined,leak
-LFLAGS := -lmlx -lmlx -lGL -lX11 -lXext
+LFLAGS := -lmlx -framework OpenGL -framework AppKit
+
 # Directories
 SRC_DIR := src
 OBJ_DIR := obj
@@ -27,26 +28,31 @@ $(SRC_DIR)/utils/final_check.c \
 $(SRC_DIR)/utils/init_structs.c \
 $(SRC_DIR)/utils/find_coords.c \
 $(SRC_DIR)/utils/free_data.c \
-$(SRC_DIR)/utils/mlx_pixel_put.c \
 $(SRC_DIR)/utils/colors.c \
 $(SRC_DIR)/utils/mlx_utils.c \
 $(SRC_DIR)/parsing/parsing.c \
 $(SRC_DIR)/utils/imagetowindow.c \
 $(SRC_DIR)/utils/map_populator.c \
-$(SRC_DIR)/movements/movements.c \
-
+$(SRC_DIR)/movements/movements.c
 
 # Object files
 OBJ_FILES := $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_FILES))
 
 # Libraries
-LIBS := -L$(LIBFT_DIR) -lft -L$(MLX_DIR) -lmlx
+LIBS := -L$(LIBFT_DIR) -lft 
 
 # Executable
 TARGET := solong
 NAME := $(TARGET)
 
-all: libft mlx_linux $(TARGET)
+# Conditional compilation based on target
+ifeq ($(MAKECMDGOALS),debug)
+ CFLAGS += -g
+else ifeq ($(MAKECMDGOALS),optimize)
+ CFLAGS += -O2
+endif
+
+all: libft $(TARGET)
 
 # Libft targets
 libft:
@@ -58,17 +64,10 @@ libft_clean:
 libft_fclean:
 	$(MAKE) -C $(LIBFT_DIR) fclean
 
-# Mlx_linux targets
-mlx_linux:
-	$(MAKE) -C $(MLX_DIR)
-
-mlx_linux_clean:
-	$(MAKE) -C $(MLX_DIR) clean
-
-clean: libft_clean mlx_linux_clean
+clean: libft_clean 
 	rm -rf $(OBJ_DIR)
 
-fclean: clean libft_fclean mlx_linux_clean
+fclean: clean libft_fclean 
 	rm -f $(TARGET)
 
 re: fclean all
@@ -81,10 +80,12 @@ rebonus: fclean bonus
 # Build rule
 $(TARGET): $(OBJ_FILES)
 	$(CC) $(CFLAGS) $^ -o $@ $(LIBS) $(LFLAGS)
+
 # Object file rule
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Phony targets
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus rebonus
+

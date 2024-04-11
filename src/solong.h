@@ -6,7 +6,7 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 00:52:32 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/10 03:05:56 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/08 21:13:54 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,17 @@
 #define BUFFER_SIZE 10000
 #endif
 
+
+#  include "../lib/mlx_macos/mlx.h"
+#  define K_A     0
+#  define K_S     1
+#  define K_D 		2
+#  define K_W     13
+#  define ARROW_KEY_LEFT		123
+#  define ARROW_KEY_RIGHT		124
+#  define ARROW_KEY_UP			126
+#  define ARROW_KEY_DOWN		125
+#  define KEY_ESC				53
 
 #define floor_sprite "./lib/assets/floor.xpm"
 #define player_sprite "./lib/assets/player.xpm"
@@ -37,11 +48,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdbool.h>
-# include "../lib/mlx_linux/mlx.h"
-# include "../lib/mlx_linux/mlx_int.h"
-
 # include <math.h>
-#include <X11/X.h>
 
 typedef struct game_objects
 {
@@ -58,6 +65,11 @@ typedef struct game_objects
 	size_t	col_y;
 	size_t	col_check;
 	size_t	init_pos_flood;
+  void	*mlx_ptr;
+	void	*win_ptr;
+	void	*textures[5];
+	int		winysize;
+	int 	winxsize;
 	struct	game_objects *next;
 }	t_objects;
 
@@ -65,13 +77,12 @@ typedef struct s_data
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
-	void	*textures[6];
+	void	*textures[5];
 	int		winysize;
 	int 	winxsize;
-
 }	t_data;
 
-void	solong(char **map);
+void	solong(char **map, t_objects **status);
 
 //error
 void	ft_error(int i);
@@ -101,22 +112,13 @@ void	matrix_clear(char **matrix);
 int		line1(const char *line);
 char	*append(char *s1, char *s2);
 int		search_n(const char *s, int c);
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-void	textures_init(t_data *data, char **map);
+void	textures_init(t_data *data, t_objects **status, char **map);
 void populate_window(char **map, t_data **data);
 
 // movements
 
-int key_press(int keycode, void *param);
 
+int key_press(int keycode, t_data **data);
 
-
-
-//Colors
-int		create_trgb(int t, int r, int g, int b);
-int		get_t(int trgb);
-int		get_r(int trgb);
-int		get_g(int trgb);
-int		get_b(int trgb);
 
 #endif

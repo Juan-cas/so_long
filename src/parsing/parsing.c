@@ -18,6 +18,11 @@ char **lets_parse_map(char **argv)
 	int fd;
 	char **map;
 
+    if (ft_strlen(argv[1]) > 4)
+    {
+        if (ft_strncmp(ft_strrchr(argv[1], '.'), ".ber", 4) != 0)
+            ft_error(5);
+    }
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0 || read(fd, 0, 0) < 0)
 		return (NULL);

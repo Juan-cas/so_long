@@ -11,5 +11,7 @@ void ft_error(int i)
 	  ft_putstr_fd("Incorrect Map", 2);
   if (i == 4)
 	  ft_putstr_fd("Read error", 2);
+  if (i == 5)
+      ft_putstr_fd("Invalid file", 2);
   exit(1);
 }

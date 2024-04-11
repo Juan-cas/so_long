@@ -12,30 +12,26 @@
 
 #include "../solong.h"
 
-//int key_press(int keycode, void *param)
-//{
-//	void *mlx_ptr = param;
-//
-//
-//	if (keycode == A)
-//		printf("A key pressed\n");
-//	else if (keycode == S)
-//		printf("S key pressed\n");
-//	else if (keycode == D)
-//		printf("D key pressed\n");
-//	else if (keycode == W)
-//		printf("W key pressed\n");
-//	else if (keycode == ESC)
-//		printf("Escape key pressed\n");
-////	else if (keycode == SPACE_BAR)
-////		printf("Space bar pressed\n");
-////	else if (keycode == LEFT_ARROW)
-////		printf("Left arrow key pressed\n");
-////	else if (keycode == RIGHT_ARROW)
-////		printf("Right arrow key pressed\n");
-////	else if (keycode == UP_ARROW)
-////		printf("Up arrow key pressed\n");
-////	else if (keycode == DOWN_ARROW)
-////		printf("Down arrow key pressed\n");
-//	return (0);
-//}
+int key_press(int keycode, t_data **data)  
+{
+	
+  if (keycode == K_A)
+		printf("A key pressed\n");
+  else if (keycode == K_S)
+		printf("S key pressed\n");
+  else if (keycode == K_D)
+		printf("D key pressed\n");
+  else if (keycode == K_W)
+		printf("W key pressed\n");
+  else if (keycode == KEY_ESC)
+    mlx_destroy_window((*data)->mlx_ptr, (*data)->win_ptr);
+  else if (keycode == ARROW_KEY_LEFT)
+		printf("Left arrow key pressed\n");
+  else if (keycode == ARROW_KEY_RIGHT)
+		printf("Right arrow key pressed\n");
+  else if (keycode == ARROW_KEY_UP)
+		printf("Up arrow key pressed\n");
+  else if (keycode == ARROW_KEY_DOWN)
+		printf("Down arrow key pressed\n");
+	return (0);
+}

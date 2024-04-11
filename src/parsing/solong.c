@@ -12,22 +12,9 @@
 
 #include "../solong.h"
 
-int on_destroy(t_data *data)
-{
-	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
-	mlx_destroy_display(data->mlx_ptr);
-	free(data->mlx_ptr);
-	exit(0);
-}
 
-int on_keypress(int keysym, t_data *data)
-{
-	(void)data;
-	printf("Pressed key: %d\\n", keysym);
-	return (0);
-}
 
-void solong(char **map)
+void solong(char **map, t_objects **status)
 {
 	t_data *data;
 
@@ -43,6 +30,7 @@ void solong(char **map)
 		return ;
 	}
 	populate_window(map, &data);
-//	mlx_hook(data->win_ptr, KeyPress, KeyPressMask, &key_press, data->mlx_ptr);
+  mlx_key_hook(data->win_ptr, &key_press, &data);
+  // mlx_loop_hook(data->mlx_ptr, 
 	mlx_loop(data->mlx_ptr);
 }
