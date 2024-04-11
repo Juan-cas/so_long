@@ -16,21 +16,16 @@
 
 void solong(char **map, t_objects **status)
 {
-	t_data *data;
 
-	data = malloc(sizeof(t_data));
-	data->mlx_ptr = mlx_init();
-	if (!data->mlx_ptr)
-		return ;
-	textures_init(data, map);
-	data->win_ptr = mlx_new_window(data->mlx_ptr, data->winxsize, data->winysize, "solong");
-	if (!data->win_ptr)
-	{
-		free(data->mlx_ptr);
-		return ;
-	}
-	populate_window(map, &data);
-  mlx_key_hook(data->win_ptr, &key_press, &data);
-  // mlx_loop_hook(data->mlx_ptr, 
-	mlx_loop(data->mlx_ptr);
+  (*status)->mlx_ptr = mlx_init();
+	if (!(*status)->mlx_ptr)
+    ft_error(2);
+	textures_init(status, map);
+	(*status)->win_ptr = mlx_new_window((*status)->mlx_ptr, (*status)->winxsize, (*status)->winysize, "solong");
+	if (!(*status)->win_ptr)
+	    ft_error(2);
+	populate_window(map, status);
+  mlx_key_hook((*status)->win_ptr, &key_press, &status);
+  // mlx_loop_hook((*status)->mlx_ptr, 
+	mlx_loop((*status)->mlx_ptr);
 }

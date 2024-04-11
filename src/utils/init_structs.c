@@ -13,24 +13,7 @@
 
 #include "../solong.h"
 
-void init_data(t_objects **status)
-{
-	(*status)->player = 0;
-	(*status)->collectible = 0;
-	(*status)->exit = 0;
-	(*status)->map_length = 0;
-	(*status)->map_lines = 0;
-	(*status)->py_coord = 0;
-	(*status)->px_coord = 0;
-	(*status)->col_x = 0;
-	(*status)->col_y = 0;
-	(*status)->col_check = 0;
-	(*status)->init_pos_flood = 0;
-	(*status)->ey_coord = 0;
-	(*status)->ex_coord = 0;
-}
-
-void assign_textures(t_data **data, int j)
+void assign_textures(t_objects **data, int j)
 {
 	int width;
 	int height;
@@ -49,13 +32,27 @@ void assign_textures(t_data **data, int j)
 		exit(1);
 }
 
-void textures_init(t_data *data, t_objects **status, char **map)
+
+void init_data(t_objects **status)
 {
-	int j;
+  	int j;
 	j =	0;
 	while (j < 5)
-		assign_textures(&data, j++);
+		assign_textures(status, j++);
 
-	(*data).winysize = (*status)->map_lines * 32;
-	(*data).winxsize = (*status)->map_length * 32;
+	(*status)->winysize = (*status)->map_lines * 32;
+	(*status)->winxsize = (*status)->map_length * 32;
+	(*status)->player = 0;
+	(*status)->collectible = 0;
+	(*status)->exit = 0;
+	(*status)->map_length = 0;
+	(*status)->map_lines = 0;
+	(*status)->py_coord = 0;
+	(*status)->px_coord = 0;
+	(*status)->col_x = 0;
+	(*status)->col_y = 0;
+	(*status)->col_check = 0;
+	(*status)->init_pos_flood = 0;
+	(*status)->ey_coord = 0;
+	(*status)->ex_coord = 0;
 }

@@ -12,21 +12,21 @@
 
 #include "../solong.h"
 
-void sort_populate(char c, int width, int height, t_data **data)
+void sort_populate(char c, int width, int height, t_objects **status)
 {
 	if (c == '0')
-		mlx_put_image_to_window((*data)->mlx_ptr, (*data)->win_ptr,(*data)->textures[0], width, height);
+		mlx_put_image_to_window((*status)->mlx_ptr, (*status)->win_ptr,(*status)->textures[0], width, height);
 	if (c == 'P')
-		mlx_put_image_to_window((*data)->mlx_ptr, (*data)->win_ptr, (*data)->textures[1], width, height);
+		mlx_put_image_to_window((*status)->mlx_ptr, (*status)->win_ptr, (*status)->textures[1], width, height);
 	if (c == 'C')
-		mlx_put_image_to_window((*data)->mlx_ptr, (*data)->win_ptr,(*data)->textures[2], width, height);
+		mlx_put_image_to_window((*status)->mlx_ptr, (*status)->win_ptr,(*status)->textures[2], width, height);
 	if (c == '1')
-		mlx_put_image_to_window((*data)->mlx_ptr, (*data)->win_ptr,(*data)->textures[3], width, height);
+		mlx_put_image_to_window((*status)->mlx_ptr, (*status)->win_ptr,(*status)->textures[3], width, height);
 	if (c == 'E')
-		mlx_put_image_to_window((*data)->mlx_ptr, (*data)->win_ptr,(*data)->textures[4], width, height);
+		mlx_put_image_to_window((*status)->mlx_ptr, (*status)->win_ptr,(*status)->textures[4], width, height);
 }
 
-void populate_window(char **map, t_data **data)
+void populate_window(char **map, t_objects **status)
 {
 	int	i;
 	int	j;
@@ -41,7 +41,7 @@ void populate_window(char **map, t_data **data)
 		width = 0;
 		while(map[i][++j])
 		{
-			sort_populate(map[i][j], width, height, data);
+			sort_populate(map[i][j], width, height, status);
 			width += 32;
 		}
 		height += 32;

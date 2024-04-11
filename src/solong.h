@@ -73,15 +73,6 @@ typedef struct game_objects
 	struct	game_objects *next;
 }	t_objects;
 
-typedef struct s_data
-{
-	void	*mlx_ptr;
-	void	*win_ptr;
-	void	*textures[5];
-	int		winysize;
-	int 	winxsize;
-}	t_data;
-
 void	solong(char **map, t_objects **status);
 
 //error
@@ -112,13 +103,13 @@ void	matrix_clear(char **matrix);
 int		line1(const char *line);
 char	*append(char *s1, char *s2);
 int		search_n(const char *s, int c);
-void	textures_init(t_data *data, t_objects **status, char **map);
-void populate_window(char **map, t_data **data);
+void	textures_init(t_objects **status, char **map);
+void populate_window(char **map, t_objects **status);
 
 // movements
 
 
-int key_press(int keycode, t_data **data);
+int key_press(int keycode, t_objects **status);
 
 
 #endif
