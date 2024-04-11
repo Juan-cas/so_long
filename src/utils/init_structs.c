@@ -49,13 +49,14 @@ void assign_textures(t_objects **status, int j)
 		exit(1);
 }
 
-void textures_init(t_objects **status)
+void textures_init(t_objects **status, char **map_board)
 {
 	int j;
 	j =	0;
 	while (j < 5)
 		assign_textures(status, j++);
-
+  
 	(*status)->winysize = (*status)->map_lines * 32;
 	(*status)->winxsize = (*status)->map_length * 32;
+  (*status)->map = map_board;
 }

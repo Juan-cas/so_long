@@ -12,11 +12,26 @@
 
 #include "../solong.h"
 
+static void move_north(t_objects **status)
+{
+  
+}
+
+static void move_left(t_objects **status)
+{}
+
+static void move_right(t_objects **status)
+{}
+
+static void move_down(t_objects **status)
+{}
+
+
 int key_press(int keycode, t_objects **status)  
 {
 	
   if (keycode == K_A)
-		printf("A key pressed\n");
+		
   else if (keycode == K_S)
 		printf("S key pressed\n");
   else if (keycode == K_D)
