@@ -19,7 +19,7 @@ void solong(char **map, t_objects **status) {
     ft_error(2);
   textures_init(status, map);
   (*status)->win_ptr = mlx_new_window((*status)->mlx_ptr, (*status)->winxsize,
-                                      (*status)->winysize, "solong");
+                                      (*status)->winysize, "so_long");
   if (!(*status)->win_ptr)
     ft_error(2);
   populate_window(status);
