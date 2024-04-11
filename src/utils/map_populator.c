@@ -12,7 +12,7 @@
 
 #include "../solong.h"
 
-void sort_populate(char c, int width, int height, t_objects **status)
+static void sort_populate(char c, int width, int height, t_objects **status)
 {
 	if (c == '0')
 		mlx_put_image_to_window((*status)->mlx_ptr, (*status)->win_ptr,(*status)->textures[0], width, height);
@@ -46,4 +46,15 @@ void populate_window(t_objects **status)
 		}
 		height += 32;
 	}
+}
+
+void tile_swap(t_objects **status, int flag)
+{
+  if (flag == 1)
+    mlx_put_image_to_window((*status)->mlx_ptr, (*status)->win_ptr,(*status)->textures[1], \
+                            (*status)->px_coord * 32, (*status)->py_coord * 32);
+  else
+    mlx_put_image_to_window((*status)->mlx_ptr, (*status)->win_ptr,(*status)->textures[1], \
+                            (*status)->px_coord * 32, (*status)->py_coord * 32);
+
 }
