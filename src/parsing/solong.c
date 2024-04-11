@@ -24,5 +24,6 @@ void solong(char **map, t_objects **status) {
     ft_error(2);
   populate_window(status);
   mlx_key_hook((*status)->win_ptr, &key_press, status);
+  mlx_do_sync((*status)->mlx_ptr);
   mlx_loop((*status)->mlx_ptr);
 }

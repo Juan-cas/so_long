@@ -48,13 +48,13 @@ void populate_window(t_objects **status)
 	}
 }
 
-void tile_swap(t_objects **status, int flag)
-{
-  if (flag == 1)
-    mlx_put_image_to_window((*status)->mlx_ptr, (*status)->win_ptr,(*status)->textures[1], \
-                            (*status)->px_coord * 32, (*status)->py_coord * 32);
-  else
-    mlx_put_image_to_window((*status)->mlx_ptr, (*status)->win_ptr,(*status)->textures[1], \
-                            (*status)->px_coord * 32, (*status)->py_coord * 32);
-
-}
+// void tile_swap(t_objects **status, int flag)
+// {
+//   if (flag == 1)
+//     mlx_put_image_to_window((*status)->mlx_ptr, (*status)->win_ptr,(*status)->textures[0], \
+//                             (*status)->px_coord * 32, (*status)->py_coord * 32);
+//   else
+//     mlx_put_image_to_window((*status)->mlx_ptr, (*status)->win_ptr,(*status)->textures[1], \
+//                             (*status)->px_coord * 32, (*status)->py_coord * 32);
+//
+// }

@@ -20,18 +20,16 @@ static void move_north(t_objects **status, size_t *i)
   {
     (*status)->map[(*status)->py_coord - 1][(*status)->px_coord] = 'P';
     (*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
-      tile_swap(status, 0);  
     (*status)->py_coord -= 1;
-      tile_swap(status, 0);  
     (*i)++;
+   populate_window(status); 
   }
   else if ((*status)->map[(*status)->py_coord - 1][(*status)->px_coord] == '0')
   {
     (*status)->map[(*status)->py_coord - 1][(*status)->px_coord] = 'P';
     (*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
-      tile_swap(status, 0);  
     (*status)->py_coord -= 1;
-      tile_swap(status, 1);  
+   populate_window(status); 
   }
   else if ((*status)->map[(*status)->py_coord - 1][(*status)->px_coord] == 'E' \
    && i != &(*status)->collectible)
@@ -48,18 +46,16 @@ static void move_left(t_objects **status, size_t *i)
   {
     (*status)->map[(*status)->py_coord][(*status)->px_coord - 1] = 'P';
     (*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
-     tile_swap(status, 0);  
-    (*status)->px_coord -= 1;
-     tile_swap(status, 1);
+    (*status)->py_coord -= 1;
     (*i)++;
+   populate_window(status); 
   }
   else if ((*status)->map[(*status)->py_coord - 1][(*status)->px_coord] == '0')
   {
     (*status)->map[(*status)->py_coord - 1][(*status)->px_coord] = 'P';
     (*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
-    tile_swap(status, 0);
-    (*status)->px_coord -= 1;
-    tile_swap(status, 1);  
+    (*status)->py_coord -= 1;
+   populate_window(status); 
   }
   else if ((*status)->map[(*status)->py_coord][(*status)->px_coord - 1] == 'E' \
    && i != &(*status)->collectible)
@@ -77,18 +73,16 @@ static void move_right(t_objects **status, size_t *i)
   {
     (*status)->map[(*status)->py_coord][(*status)->px_coord + 1] = 'P';
     (*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
-    tile_swap(status, 0);
     (*status)->px_coord += 1;
-    tile_swap(status, 1);
     (*i)++;
+   populate_window(status); 
   }
   else if ((*status)->map[(*status)->py_coord - 1][(*status)->px_coord] == '0')
   {
     (*status)->map[(*status)->py_coord][(*status)->px_coord + 1] = 'P';
     (*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
-    tile_swap(status, 0);
     (*status)->px_coord += 1;
-    tile_swap(status, 1);
+   populate_window(status); 
   }
   else if ((*status)->map[(*status)->py_coord][(*status)->px_coord - 1] == 'E' \
    && i != &(*status)->collectible)
@@ -105,18 +99,16 @@ static void move_down(t_objects **status, size_t *i)
   {
     (*status)->map[(*status)->py_coord + 1][(*status)->px_coord] = 'P';
     (*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
-      tile_swap(status, 0);  
     (*status)->py_coord += 1;
-      tile_swap(status, 1);  
     (*i)++;
+   populate_window(status); 
   }
   else if ((*status)->map[(*status)->py_coord + 1][(*status)->px_coord] == '0')
   {
     (*status)->map[(*status)->py_coord - 1][(*status)->px_coord] = 'P';
     (*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
-      tile_swap(status, 0);  
-    (*status)->py_coord += 1;
-      tile_swap(status, 1);  
+    (*status)->py_coord -= 1;
+   populate_window(status); 
   }
   else if ((*status)->map[(*status)->py_coord + 1][(*status)->px_coord] == 'E' \
    && i != &(*status)->collectible)

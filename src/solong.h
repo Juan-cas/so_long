@@ -33,6 +33,9 @@
 #  define ARROW_KEY_DOWN		125
 #  define KEY_ESC				53
 
+#define MLX_SYNC_IMAGE_WRITABLE		1
+#define MLX_SYNC_WIN_FLUSH_CMD		2
+#define MLX_SYNC_WIN_CMD_COMPLETED	3
 #define floor_sprite "./lib/assets/floor.xpm"
 #define player_sprite "./lib/assets/player.xpm"
 #define enemy_sprite "./lib/assets/Juan-heroe-ogro.xpm"
@@ -107,7 +110,7 @@ char	*append(char *s1, char *s2);
 int		search_n(const char *s, int c);
 void	textures_init(t_objects **status, char **map_board);
 void populate_window(t_objects **status);
-void tile_swap(t_objects **status, int flag);
+// void tile_swap(t_objects **status, int flag);
 
 // movements
 
