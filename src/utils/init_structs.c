@@ -13,35 +13,8 @@
 
 #include "../solong.h"
 
-void assign_textures(t_objects **data, int j)
+void init_status(t_objects **status)
 {
-	int width;
-	int height;
-
-	if (j == 0)
-		(*data)->textures[0] = mlx_xpm_file_to_image((*data)->mlx_ptr, floor_sprite, &width, &height);
-	if (j == 1)
-		(*data)->textures[1] = mlx_xpm_file_to_image((*data)->mlx_ptr, player_sprite, &width, &height);
-	if (j == 2)
-		(*data)->textures[2] = mlx_xpm_file_to_image((*data)->mlx_ptr, potion_sprite, &width, &height);
-	if (j == 3)
-		(*data)->textures[3] = mlx_xpm_file_to_image((*data)->mlx_ptr, wall_sprite, &width, &height);
-	if (j == 4)
-		(*data)->textures[4] = mlx_xpm_file_to_image((*data)->mlx_ptr, exit_door_sprite, &width, &height);
-	if (!(*data)->textures[j])
-		exit(1);
-}
-
-
-void init_data(t_objects **status)
-{
-  	int j;
-	j =	0;
-	while (j < 5)
-		assign_textures(status, j++);
-
-	(*status)->winysize = (*status)->map_lines * 32;
-	(*status)->winxsize = (*status)->map_length * 32;
 	(*status)->player = 0;
 	(*status)->collectible = 0;
 	(*status)->exit = 0;
@@ -55,4 +28,34 @@ void init_data(t_objects **status)
 	(*status)->init_pos_flood = 0;
 	(*status)->ey_coord = 0;
 	(*status)->ex_coord = 0;
+}
+
+void assign_textures(t_objects **status, int j)
+{
+	int width;
+	int height;
+
+	if (j == 0)
+		(*status)->textures[0] = mlx_xpm_file_to_image((*status)->mlx_ptr, floor_sprite, &width, &height);
+	if (j == 1)
+		(*status)->textures[1] = mlx_xpm_file_to_image((*status)->mlx_ptr, player_sprite, &width, &height);
+	if (j == 2)
+		(*status)->textures[2] = mlx_xpm_file_to_image((*status)->mlx_ptr, potion_sprite, &width, &height);
+	if (j == 3)
+		(*status)->textures[3] = mlx_xpm_file_to_image((*status)->mlx_ptr, wall_sprite, &width, &height);
+	if (j == 4)
+		(*status)->textures[4] = mlx_xpm_file_to_image((*status)->mlx_ptr, exit_door_sprite, &width, &height);
+	if (!(*status)->textures[j])
+		exit(1);
+}
+
+void textures_init(t_objects **status)
+{
+	int j;
+	j =	0;
+	while (j < 5)
+		assign_textures(status, j++);
+
+	(*status)->winysize = (*status)->map_lines * 32;
+	(*status)->winxsize = (*status)->map_length * 32;
 }

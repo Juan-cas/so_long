@@ -67,7 +67,7 @@ typedef struct game_objects
 	size_t	init_pos_flood;
   void	*mlx_ptr;
 	void	*win_ptr;
-	void	*textures[5];
+	void	*textures[6];
 	int		winysize;
 	int 	winxsize;
 	struct	game_objects *next;
@@ -103,7 +103,7 @@ void	matrix_clear(char **matrix);
 int		line1(const char *line);
 char	*append(char *s1, char *s2);
 int		search_n(const char *s, int c);
-void	textures_init(t_objects **status, char **map);
+void	textures_init(t_objects **status);
 void populate_window(char **map, t_objects **status);
 
 // movements

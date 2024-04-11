@@ -1,6 +1,6 @@
 # Compiler and flags
 CC := gcc
-CFLAGS := -Wall -Wextra -Werror -g3 #-fsanitize=address,undefined,leak
+CFLAGS := -Wall -Wextra -Werror -g3 -fsanitize=address
 LFLAGS := -lmlx -framework OpenGL -framework AppKit
 
 # Directories

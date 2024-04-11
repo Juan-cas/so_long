@@ -12,7 +12,7 @@
 
 #include "../solong.h"
 
-int key_press(int keycode, t_data **data)  
+int key_press(int keycode, t_objects **status)  
 {
 	
   if (keycode == K_A)
@@ -24,7 +24,7 @@ int key_press(int keycode, t_data **data)
   else if (keycode == K_W)
 		printf("W key pressed\n");
   else if (keycode == KEY_ESC)
-    mlx_destroy_window((*data)->mlx_ptr, (*data)->win_ptr);
+    mlx_destroy_window((*status)->mlx_ptr, (*status)->win_ptr);
   else if (keycode == ARROW_KEY_LEFT)
 		printf("Left arrow key pressed\n");
   else if (keycode == ARROW_KEY_RIGHT)
