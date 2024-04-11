@@ -47,7 +47,7 @@ char **init_parser(char **argv, t_objects **status)
 	char **map;
 
 	map = NULL;
-	init_data(status);
+	init_status(status);
 	map = lets_parse_map(argv);
 	if (!map)
 	{

@@ -12,19 +12,17 @@
 
 #include "../solong.h"
 
-
-
-void solong(char **map, t_objects **status)
-{
+void solong(char **map, t_objects **status) {
 
   (*status)->mlx_ptr = mlx_init();
-	if (!(*status)->mlx_ptr)
+  if (!(*status)->mlx_ptr)
     ft_error(2);
-	textures_init(status);
-	(*status)->win_ptr = mlx_new_window((*status)->mlx_ptr, (*status)->winxsize, (*status)->winysize, "solong");
-	if (!(*status)->win_ptr)
-	    ft_error(2);
-	populate_window(map, status);
+  textures_init(status);
+  (*status)->win_ptr = mlx_new_window((*status)->mlx_ptr, (*status)->winxsize,
+                                      (*status)->winysize, "solong");
+  if (!(*status)->win_ptr)
+    ft_error(2);
+  populate_window(map, status);
   mlx_key_hook((*status)->win_ptr, &key_press, status);
-	mlx_loop((*status)->mlx_ptr);
+  mlx_loop((*status)->mlx_ptr);
 }

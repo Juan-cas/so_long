@@ -101,6 +101,7 @@ char	**map_maker(int fd);
 char	*get_next_line(int fd);
 void	matrix_clear(char **matrix);
 int		line1(const char *line);
+void init_status(t_objects **status);
 char	*append(char *s1, char *s2);
 int		search_n(const char *s, int c);
 void	textures_init(t_objects **status);

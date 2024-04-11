@@ -24,7 +24,10 @@ int key_press(int keycode, t_objects **status)
   else if (keycode == K_W)
 		printf("W key pressed\n");
   else if (keycode == KEY_ESC)
+  {
     mlx_destroy_window((*status)->mlx_ptr, (*status)->win_ptr);
+    exit(0);
+  }
   else if (keycode == ARROW_KEY_LEFT)
 		printf("Left arrow key pressed\n");
   else if (keycode == ARROW_KEY_RIGHT)
