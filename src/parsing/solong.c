@@ -22,7 +22,7 @@ void solong(char **map, t_objects **status) {
                                       (*status)->winysize, "solong");
   if (!(*status)->win_ptr)
     ft_error(2);
-  populate_window(map, status);
+  populate_window(status);
   mlx_key_hook((*status)->win_ptr, &key_press, status);
   mlx_loop((*status)->mlx_ptr);
 }

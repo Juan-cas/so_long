@@ -12,44 +12,108 @@
 
 #include "../solong.h"
 
-static void move_north(t_objects **status)
+static void move_north(t_objects **status, size_t *i)
 {
-  
+  if ((*status)->map[(*status)->py_coord - 1][(*status)->px_coord] == '1')
+    return ;
+  else if ((*status)->map[(*status)->py_coord - 1][(*status)->px_coord] == 'C')
+  {
+    (*status)->map[(*status)->py_coord - 1][(*status)->px_coord] = 'P';
+    (*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
+    (*status)->py_coord -= 1;
+    (*i)++;
+   populate_window(status); 
+  }
+  else if ((*status)->map[(*status)->py_coord - 1][(*status)->px_coord] == 'E' \
+   && i != &(*status)->collectible)
+    return ;
+  else
+   exit(0); 
 }
 
-static void move_left(t_objects **status)
-{}
+static void move_left(t_objects **status, size_t *i)
+{
+  if ((*status)->map[(*status)->py_coord][(*status)->px_coord - 1] == '1')
+    return ;
+  else if ((*status)->map[(*status)->py_coord][(*status)->px_coord - 1] == 'C')
+  {
+    (*status)->map[(*status)->py_coord][(*status)->px_coord - 1] = 'P';
+    (*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
+    (*status)->px_coord -= 1;
+    (*i)++;
+   populate_window(status); 
+  }
+  else if ((*status)->map[(*status)->py_coord][(*status)->px_coord - 1] == 'E' \
+   && i != &(*status)->collectible)
+    return ;
+  else
+   exit(0);
 
-static void move_right(t_objects **status)
-{}
+}
 
-static void move_down(t_objects **status)
-{}
+static void move_right(t_objects **status, size_t *i)
+{
+  if ((*status)->map[(*status)->py_coord][(*status)->px_coord + 1] == '1')
+    return ;
+  else if ((*status)->map[(*status)->py_coord][(*status)->px_coord + 1] == 'C')
+  {
+    (*status)->map[(*status)->py_coord][(*status)->px_coord + 1] = 'P';
+    (*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
+    (*status)->px_coord += 1;
+    (*i)++;
+   populate_window(status); 
+  }
+  else if ((*status)->map[(*status)->py_coord][(*status)->px_coord - 1] == 'E' \
+   && i != &(*status)->collectible)
+    return ;
+  else
+   exit(0);
+}
+
+static void move_down(t_objects **status, size_t *i)
+{
+  if ((*status)->map[(*status)->py_coord + 1][(*status)->px_coord] == '1')
+    return ;
+  else if ((*status)->map[(*status)->py_coord + 1][(*status)->px_coord] == 'C')
+  {
+    (*status)->map[(*status)->py_coord + 1][(*status)->px_coord] = 'P';
+    (*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
+    (*status)->px_coord -= 1;
+    (*i)++;
+   populate_window(status); 
+  }
+  else if ((*status)->map[(*status)->py_coord + 1][(*status)->px_coord] == 'E' \
+   && i != &(*status)->collectible)
+    return ;
+  else
+   exit(0);
+}
 
 
 int key_press(int keycode, t_objects **status)  
 {
-	
+	static size_t i = 0;
+
   if (keycode == K_A)
-		
+	  move_left(status, &i);	
   else if (keycode == K_S)
-		printf("S key pressed\n");
+    move_down(status, &i);
   else if (keycode == K_D)
-		printf("D key pressed\n");
+    move_right(status, &i);
   else if (keycode == K_W)
-		printf("W key pressed\n");
+    move_north(status, &i);
   else if (keycode == KEY_ESC)
   {
     mlx_destroy_window((*status)->mlx_ptr, (*status)->win_ptr);
     exit(0);
   }
   else if (keycode == ARROW_KEY_LEFT)
-		printf("Left arrow key pressed\n");
+    move_left(status, &i);
   else if (keycode == ARROW_KEY_RIGHT)
-		printf("Right arrow key pressed\n");
+    move_right(status, &i);  
   else if (keycode == ARROW_KEY_UP)
-		printf("Up arrow key pressed\n");
+    move_north(status, &i);
   else if (keycode == ARROW_KEY_DOWN)
-		printf("Down arrow key pressed\n");
+    move_down(status, &i);
 	return (0);
 }

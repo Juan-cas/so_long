@@ -26,7 +26,7 @@ void sort_populate(char c, int width, int height, t_objects **status)
 		mlx_put_image_to_window((*status)->mlx_ptr, (*status)->win_ptr,(*status)->textures[4], width, height);
 }
 
-void populate_window(char **map, t_objects **status)
+void populate_window(t_objects **status)
 {
 	int	i;
 	int	j;
@@ -35,13 +35,13 @@ void populate_window(char **map, t_objects **status)
 
 	i = -1;
 	height = 0;
-	while (map[++i])
+	while ((*status)->map[++i])
 	{
 		j = -1;
 		width = 0;
-		while(map[i][++j])
+		while((*status)->map[i][++j])
 		{
-			sort_populate(map[i][j], width, height, status);
+			sort_populate((*status)->map[i][j], width, height, status);
 			width += 32;
 		}
 		height += 32;
