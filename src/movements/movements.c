@@ -12,7 +12,7 @@
 
 #include "../solong.h"
 
-static void	move_north(t_objects **status, size_t *i)
+static void	move_north(t_objects **status)
 {
 	if ((*status)->map[(*status)->py_coord - 1][(*status)->px_coord] != '1')
 	{
@@ -21,7 +21,7 @@ static void	move_north(t_objects **status, size_t *i)
 			(*status)->map[(*status)->py_coord - 1][(*status)->px_coord] = 'P';
 			(*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
 			(*status)->py_coord -= 1;
-			(*i)++;
+			(*status)->collectible--;
 		}
 		else if ((*status)->map[(*status)->py_coord
 			- 1][(*status)->px_coord] == '0')
@@ -31,16 +31,16 @@ static void	move_north(t_objects **status, size_t *i)
 			(*status)->py_coord -= 1;
 		}
 		else if ((*status)->map[(*status)->py_coord
-			- 1][(*status)->px_coord] == 'E' && i != &(*status)->collectible)
+			- 1][(*status)->px_coord] == 'E' && (*status)->collectible != 0)
 			return ;
 		else if ((*status)->map[(*status)->py_coord
-			+ 1][(*status)->px_coord] == 'E' && i == &(*status)->collectible)
+			+ 1][(*status)->px_coord] == 'E' && (*status)->collectible == 0)
 			exit(0);
 			populate_window(status);
 	}
 }
 
-static void	move_left(t_objects **status, size_t *i)
+static void	move_left(t_objects **status)
 {
 	if ((*status)->map[(*status)->py_coord][(*status)->px_coord - 1] != '1')
 	{
@@ -49,7 +49,7 @@ static void	move_left(t_objects **status, size_t *i)
 			(*status)->map[(*status)->py_coord][(*status)->px_coord - 1] = 'P';
 			(*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
 			(*status)->px_coord -= 1;
-			(*i)++;
+			(*status)->collectible--;
 		}
 		else if ((*status)->map[(*status)->py_coord]
       [(*status)->px_coord - 1] == '0')
@@ -59,25 +59,25 @@ static void	move_left(t_objects **status, size_t *i)
 			(*status)->px_coord -= 1;
 		}
 		else if ((*status)->map[(*status)->py_coord][(*status)->px_coord
-			- 1] == 'E' && i != &(*status)->collectible)
+			- 1] == 'E' && (*status)->collectible != 0)
 			return ;
 		else if ((*status)->map[(*status)->py_coord
-			+ 1][(*status)->px_coord] == 'E' && i == &(*status)->collectible)
+			+ 1][(*status)->px_coord] == 'E' && (*status)->collectible == 0)
 			exit(0);
 			populate_window(status);
 	}
 }
 
-static void	move_right(t_objects **status, size_t *i)
+static void	move_right(t_objects **status)
 {
 	if ((*status)->map[(*status)->py_coord][(*status)->px_coord + 1] != '1')
 	{
-		if ((*status)->map[(*status)->py_coord][(*status)->px_coord + 1] == 'C')
+		if ((*status)->map[(*status)->py_coord][(*status)->px_coord + 1]  == 'C')
 		{
 			(*status)->map[(*status)->py_coord][(*status)->px_coord + 1] = 'P';
 			(*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
 			(*status)->px_coord += 1;
-			(*i)++;
+			(*status)->collectible--;
 		}
 		else if ((*status)->map[(*status)->py_coord]
       [(*status)->px_coord + 1] == '0')
@@ -87,16 +87,16 @@ static void	move_right(t_objects **status, size_t *i)
 			(*status)->px_coord += 1;
 		}
 		else if ((*status)->map[(*status)->py_coord][(*status)->px_coord
-			+ 1] == 'E' && i != &(*status)->collectible)
+			+ 1] == 'E' && (*status)->collectible != 0)
 			return ;
 		else if ((*status)->map[(*status)->py_coord
-			+ 1][(*status)->px_coord] == 'E' && i == &(*status)->collectible)
+			+ 1][(*status)->px_coord] == 'E' && (*status)->collectible == 0)
 			exit(0);
 			populate_window(status);
 	}
 }
 
-static void	move_down(t_objects **status, size_t *i)
+static void	move_down(t_objects **status)
 {
 	if ((*status)->map[(*status)->py_coord + 1][(*status)->px_coord] != '1')
 	{
@@ -105,7 +105,7 @@ static void	move_down(t_objects **status, size_t *i)
 			(*status)->map[(*status)->py_coord + 1][(*status)->px_coord] = 'P';
 			(*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
 			(*status)->py_coord += 1;
-			(*i)++;
+      (*status)->collectible--;
 		}
 		else if ((*status)->map[(*status)->py_coord
 			+ 1][(*status)->px_coord] == '0')
@@ -115,40 +115,37 @@ static void	move_down(t_objects **status, size_t *i)
 			(*status)->py_coord += 1;
 		}
 		else if ((*status)->map[(*status)->py_coord
-			+ 1][(*status)->px_coord] == 'E' && i != &(*status)->collectible)
+			+ 1][(*status)->px_coord] == 'E' && (*status)->collectible != 0)
 			return ;
 		else if ((*status)->map[(*status)->py_coord
-			+ 1][(*status)->px_coord] == 'E' && i == &(*status)->collectible)
+			+ 1][(*status)->px_coord] == 'E' && (*status)->collectible == 0)
 			exit(0);
 		populate_window(status);
-
 	}
 }
 
 int	key_press(int keycode, t_objects **status)
 {
-	static size_t	i = 0;
-
 	if (keycode == K_A)
-		move_left(status, &i);
+		move_left(status);
 	else if (keycode == K_S)
-		move_down(status, &i);
+		move_down(status);
 	else if (keycode == K_D)
-		move_right(status, &i);
+		move_right(status);
 	else if (keycode == K_W)
-		move_north(status, &i);
+		move_north(status);
 	else if (keycode == KEY_ESC)
 	{
 		mlx_destroy_window((*status)->mlx_ptr, (*status)->win_ptr);
 		exit(0);
 	}
 	else if (keycode == ARROW_KEY_LEFT)
-		move_left(status, &i);
+		move_left(status);
 	else if (keycode == ARROW_KEY_RIGHT)
-		move_right(status, &i);
+		move_right(status);
 	else if (keycode == ARROW_KEY_UP)
-		move_north(status, &i);
+		move_north(status);
 	else if (keycode == ARROW_KEY_DOWN)
-		move_down(status, &i);
+		move_down(status);
 	return (0);
 }
