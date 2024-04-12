@@ -6,14 +6,13 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 09:22:06 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/03/31 09:22:06 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/12 03:15:58 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../solong.h"
 
-char *append(char *s1, char *s2)
+char	*append(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	j;

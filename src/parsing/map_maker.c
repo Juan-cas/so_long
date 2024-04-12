@@ -6,16 +6,15 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 03:41:20 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/06 03:41:20 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/12 03:16:33 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../solong.h"
 
-static char **map_matrix(char **str)
+static char	**map_matrix(char **str)
 {
-	char **map;
+	char	**map;
 
 	map = ft_split(*str, '\n');
 	if (!map)
@@ -26,9 +25,9 @@ static char **map_matrix(char **str)
 	return (map);
 }
 
-char **map_maker(int fd)
+char	**map_maker(int fd)
 {
-	char    *str;
+	char	*str;
 	char	*temp;
 
 	str = NULL;
@@ -36,7 +35,7 @@ char **map_maker(int fd)
 	{
 		temp = get_next_line(fd);
 		if (temp == NULL)
-			break;
+			break ;
 		str = append(str, temp);
 		if (!str)
 			ft_error(2);

@@ -6,14 +6,13 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 00:38:19 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/07 20:42:29 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/12 03:16:29 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../solong.h"
 
-static void objects_check(t_objects *status)
+static void	objects_check(t_objects *status)
 {
 	if (status->player != 1)
 		ft_error(3);
@@ -23,27 +22,27 @@ static void objects_check(t_objects *status)
 		ft_error(3);
 }
 
-static void is_map_valid(char *map, t_objects *status)
+static void	is_map_valid(char *map, t_objects *status)
 {
-	size_t j;
+	size_t	j;
 
 	j = 0;
-	while(map[j])
+	while (map[j])
 	{
 		if (j == 0 && !is1(map[j]))
 			ft_error(3);
 		if (j == ft_strlen(map) - 1 && !is1(map[j]))
 			ft_error(3);
-		else if (!is1(map[j]) && !is0(map[j]) && !isc(map[j], status) \
+		else if (!is1(map[j]) && !is0(map[j]) && !isc(map[j], status)
 			&& !ise(map[j], status) && !isp(map[j], status))
 			ft_error(3);
 		j++;
- 	}
+	}
 }
 
-static void parsing(char **map, t_objects *status)
+static void	parsing(char **map, t_objects *status)
 {
-	size_t i;
+	size_t	i;
 
 	i = -1;
 	while (map[++i])
@@ -58,16 +57,17 @@ static void parsing(char **map, t_objects *status)
 	objects_check(status);
 }
 
-static size_t how_many_lines(char **map)
+static size_t	how_many_lines(char **map)
 {
 	size_t	lines;
 
 	lines = -1;
-	while(map[++lines]);
+	while (map[++lines])
+		;
 	return (lines);
 }
 
-void map_check(char **map, t_objects **status)
+void	map_check(char **map, t_objects **status)
 {
 	(*status)->map_lines = how_many_lines(map);
 	(*status)->map_length = ft_strlen(map[0]);

@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   flood_fill.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: juan-cas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 03:15:46 by juan-cas          #+#    #+#             */
+/*   Updated: 2024/04/12 03:15:48 by juan-cas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../solong.h"
 
-static void crawler(char **map, size_t y, size_t x, t_objects **status)
+static void	crawler(char **map, size_t y, size_t x, t_objects **status)
 {
 	if (y >= (*status)->map_lines || x >= (*status)->map_length)
 		return ;
@@ -25,12 +36,11 @@ static void crawler(char **map, size_t y, size_t x, t_objects **status)
 	crawler(map, y, x - 1, status);
 }
 
-
-void flood_fill(char **map, t_objects **status)
+void	flood_fill(char **map, t_objects **status)
 {
 	find_coords_p(map, status);
 	crawler(map, (*status)->py_coord, (*status)->px_coord, status);
-	if((*status)->col_check != (*status)->collectible)
+	if ((*status)->col_check != (*status)->collectible)
 	{
 		perror("Invalid map");
 		exit(1);

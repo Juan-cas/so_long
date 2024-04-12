@@ -6,17 +6,16 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 20:57:07 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/02 20:57:07 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/12 03:15:10 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../solong.h"
 
-void free_coords(t_objects **nodes)
+void	free_coords(t_objects **nodes)
 {
-	t_objects *prev;
-	t_objects *temp;
+	t_objects	*prev;
+	t_objects	*temp;
 
 	temp = *nodes;
 	prev = *nodes;

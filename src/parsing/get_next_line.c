@@ -1,6 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: juan-cas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 03:16:16 by juan-cas          #+#    #+#             */
+/*   Updated: 2024/04/12 03:16:19 by juan-cas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../solong.h"
-
 
 char	*reader(int fd, char *saver)
 {
@@ -73,8 +83,6 @@ char	*finalline(char *line, char **saver)
 	return (line);
 }
 
-
-
 char	*get_next_line(int fd)
 {
 	static char	*saver = NULL;
@@ -83,7 +91,7 @@ char	*get_next_line(int fd)
 	if (BUFFER_SIZE <= 0)
 	{
 		perror("Invadlid buffersize");
-		exit (1);
+		exit(1);
 	}
 	line = NULL;
 	saver = reader(fd, saver);

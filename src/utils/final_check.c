@@ -1,20 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   final_check.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: juan-cas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 03:15:52 by juan-cas          #+#    #+#             */
+/*   Updated: 2024/04/12 03:15:54 by juan-cas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../solong.h"
 
-static void repopulate_map(char **map, t_objects **status)
+static void	repopulate_map(char **map, t_objects **status)
 {
-	t_objects *temp;
+	t_objects	*temp;
 
 	temp = (*status)->next;
 	map[(*status)->py_coord][(*status)->px_coord] = 'P';
-	while(temp)
+	while (temp)
 	{
 		map[temp->col_y][temp->col_x] = 'C';
 		temp = temp->next;
 	}
 }
 
-static void cleanse_map(char **map)
+static void	cleanse_map(char **map)
 {
 	size_t	i;
 	size_t	j;
@@ -33,7 +44,7 @@ static void cleanse_map(char **map)
 	}
 }
 
-static void roadtoexit(char **map, t_objects **status)
+static void	roadtoexit(char **map, t_objects **status)
 {
 	if (map[(*status)->ey_coord + 1][(*status)->ex_coord] == 'P')
 		return ;
@@ -50,7 +61,7 @@ static void roadtoexit(char **map, t_objects **status)
 	}
 }
 
-void final_check(char **map, t_objects **status)
+void	final_check(char **map, t_objects **status)
 {
 	find_coords_e(map, status);
 	roadtoexit(map, status);

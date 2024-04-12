@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   coords_x_y_.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: juan-cas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/12 03:14:59 by juan-cas          #+#    #+#             */
+/*   Updated: 2024/04/12 03:15:00 by juan-cas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../solong.h"
 
 static void	next_data_node(t_objects **data_struct, t_objects *new_node)
 {
-	t_objects *holder;
+	t_objects	*holder;
 
 	if (!data_struct)
 		return ;
@@ -18,9 +29,9 @@ static void	next_data_node(t_objects **data_struct, t_objects *new_node)
 	}
 }
 
-static t_objects *new_data(size_t y, size_t x)
+static t_objects	*new_data(size_t y, size_t x)
 {
-	t_objects 	*big_list;
+	t_objects	*big_list;
 
 	big_list = (t_objects *)malloc(sizeof(t_objects));
 	if (!big_list)
@@ -34,9 +45,9 @@ static t_objects *new_data(size_t y, size_t x)
 	return (big_list);
 }
 
-void collx_y(size_t y, size_t x, t_objects **status)
+void	collx_y(size_t y, size_t x, t_objects **status)
 {
-	t_objects *temp;
+	t_objects	*temp;
 
 	temp = new_data(y, x);
 	next_data_node(status, temp);

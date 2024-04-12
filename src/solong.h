@@ -110,8 +110,7 @@ char	*append(char *s1, char *s2);
 int		search_n(const char *s, int c);
 void	textures_init(t_objects **status, char **map_board);
 void populate_window(t_objects **status);
-// void tile_swap(t_objects **status, int flag);
-
+void	put_floor(t_objects **status, int width, int height);
 // movements
 
 
