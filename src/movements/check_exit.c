@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   movements.c                                        :+:      :+:    :+:   */
+/*   check_exit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 18:54:38 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/17 12:38:39 by juan-cas         ###   ########.fr       */
+/*   Created: 2024/04/17 09:11:23 by juan-cas          #+#    #+#             */
+/*   Updated: 2024/04/17 11:13:12 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
 
-int	key_press(int keycode, t_objects **status)
-{
-	size_t		flag;
-	static int	steps = 1;
 
-	flag = 0;
-	step_printer(steps);
-	if (keycode == K_A)
-		move_left(status);
-	else if (keycode == K_S)
-		move_down(status);
-	else if (keycode == K_D)
-		move_right(status);
-	else if (keycode == K_W)
-		move_north(status);
-	else if (keycode == KEY_ESC)
-	{
-		mlx_destroy_window((*status)->mlx_ptr, (*status)->win_ptr);
+void check_exit(char **map, size_t py_c, size_t px_c, t_objects **status)
+{
+	if ( map[py_c][px_c] == 'E' && (*status)->collectible == 0)
 		exit(0);
-	}
-	steps++;
-	return (0);
+	if ((*status)->map[py_c][px_c] == 'E' && (*status)->collectible != 0)
+		return;
 }

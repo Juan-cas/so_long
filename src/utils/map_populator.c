@@ -6,7 +6,7 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 06:12:16 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/17 08:01:48 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/17 12:23:19 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,4 @@ void	populate_window(t_objects **status)
 		}
 		height += 32;
 	}
-}
-
-void	put_floor(t_objects **status, int width, int height)
-{
-	mlx_put_image_to_window((*status)->mlx_ptr, (*status)->win_ptr,
-		(*status)->textures[0], width, height);
 }

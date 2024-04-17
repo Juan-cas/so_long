@@ -34,6 +34,12 @@ $(SRC_DIR)/utils/map_populator.c \
 $(SRC_DIR)/movements/movements.c \
 $(SRC_DIR)/error/ft_exit.c \
 $(SRC_DIR)/utils/step_printer.c \
+$(SRC_DIR)/movements/check_exit.c \
+$(SRC_DIR)/movements/move_up.c \
+$(SRC_DIR)/movements/move_down.c \
+$(SRC_DIR)/movements/move_left.c \
+$(SRC_DIR)/movements/move_right.c \
+
 # Object files
 OBJ_FILES := $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_FILES))
 

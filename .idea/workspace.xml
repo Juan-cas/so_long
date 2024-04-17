@@ -23,33 +23,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4d7acb9-12b1-4bc5-95d5-e9cf605850f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/obj/error/ft_error.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/main.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/parsing/get_next_line.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/parsing/map_maker.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/error/ft_exit.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/movements/check_exit.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/movements/move_down.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/movements/move_left.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/movements/move_right.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libft/libft.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solong" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parsing/correct_map_template.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsing/correct_map_template.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parsing/get_next_line.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsing/get_next_line.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parsing/line1.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsing/line1.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parsing/map_check.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsing/map_check.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parsing/map_maker.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsing/map_maker.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parsing/parsing.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsing/parsing.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parsing/solong.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsing/solong.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/movements/movements.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/movements/movements.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/movements/north_move.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/movements/move_up.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/solong.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/solong.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/append.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/append.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/coords_x_y_.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/coords_x_y_.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/find_coords.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/find_coords.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/find_n.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/find_n.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/flood_fill.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/flood_fill.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/free_data.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/free_data.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/imagetowindow.c" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/map_populator.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/map_populator.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/mlx_utils.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/step_printer.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/step_printer.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +69,11 @@
             </list>
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
       </map>
     </option>
   </component>
@@ -140,7 +128,22 @@
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
+    <configuration name="all" type="CLionNativeAppRunConfigurationType" PROGRAM_PARAMS="&quot;map.ber&quot;" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="all" CONFIG_NAME="all" version="1" RUN_PATH="$PROJECT_DIR$/solong">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="bonus" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="bonus" CONFIG_NAME="bonus" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="bonus" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="bonus" CONFIG_NAME="bonus" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="fclean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="fclean" CONFIG_NAME="fclean" version="1">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
@@ -155,7 +158,22 @@
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
+    <configuration name="libft" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="libft" CONFIG_NAME="libft" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="libft_clean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="libft_clean" CONFIG_NAME="libft_clean" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="libft_clean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="libft_clean" CONFIG_NAME="libft_clean" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="libft_fclean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="libft_fclean" CONFIG_NAME="libft_fclean" version="1">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
@@ -170,7 +188,22 @@
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
+    <configuration name="re" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="re" CONFIG_NAME="re" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="rebonus" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="rebonus" CONFIG_NAME="rebonus" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="rebonus" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="rebonus" CONFIG_NAME="rebonus" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="solong" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="solong" CONFIG_NAME="solong" version="1">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
@@ -209,6 +242,8 @@
       <workItem from="1712715169328" duration="1689000" />
       <workItem from="1713312580839" duration="198000" />
       <workItem from="1713312783461" duration="1444000" />
+      <workItem from="1713337541812" duration="14000" />
+      <workItem from="1713337577313" duration="6817000" />
     </task>
     <servers />
   </component>

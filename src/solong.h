@@ -6,7 +6,7 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 00:52:32 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/17 08:16:49 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/17 12:39:58 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,10 +110,14 @@ char					*append(char *s1, char *s2);
 int						search_n(const char *s, int c);
 void					textures_init(t_objects **status, char **map_board);
 void					populate_window(t_objects **status);
-void					put_floor(t_objects **status, int width, int height);
 void					step_printer(int i);
-// movements
+void check_exit(char **map, size_t py_c, size_t px_c, t_objects **status);
 
+// movements
 int						key_press(int keycode, t_objects **status);
+void	move_north(t_objects **status);
+void	move_down(t_objects **status);
+void	move_left(t_objects **status);
+void	move_right(t_objects **status);
 
 #endif
