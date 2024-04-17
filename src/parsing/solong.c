@@ -6,11 +6,12 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 23:51:02 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/17 02:36:54 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/17 08:08:44 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
+
 /* main program function it initiates the structure matrix the pointer to the
  * server, and the window, fills it with the sprites and keeps the mlxServer
  * in a loop waiting for the hooks*/

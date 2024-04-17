@@ -29,13 +29,11 @@ $(SRC_DIR)/utils/init_structs.c \
 $(SRC_DIR)/utils/find_coords.c \
 $(SRC_DIR)/utils/free_data.c \
 $(SRC_DIR)/utils/colors.c \
-$(SRC_DIR)/utils/mlx_utils.c \
 $(SRC_DIR)/parsing/parsing.c \
-$(SRC_DIR)/utils/imagetowindow.c \
 $(SRC_DIR)/utils/map_populator.c \
 $(SRC_DIR)/movements/movements.c \
 $(SRC_DIR)/error/ft_exit.c \
-
+$(SRC_DIR)/utils/step_printer.c \
 # Object files
 OBJ_FILES := $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_FILES))
 

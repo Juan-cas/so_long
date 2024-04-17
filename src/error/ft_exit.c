@@ -6,11 +6,12 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 02:31:48 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/17 02:33:44 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/17 08:17:24 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
+
 /* will show a message in the terminal and exit the process */
 int	ft_exit(t_objects **status)
 {

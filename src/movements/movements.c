@@ -6,7 +6,7 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:54:38 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/12 03:13:45 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/17 08:17:38 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ static void	move_north(t_objects **status, size_t flag)
 			(*status)->map[(*status)->py_coord - 1][(*status)->px_coord] = 'P';
 			(*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
 			(*status)->py_coord -= 1;
- 			put_floor(status, (*status)->px_coord * 32, (*status)->py_coord * 32);
+			put_floor(status, (*status)->px_coord * 32, (*status)->py_coord
+				* 32);
 			(*status)->collectible--;
 		}
 		else if ((*status)->map[(*status)->py_coord
@@ -30,14 +31,13 @@ static void	move_north(t_objects **status, size_t flag)
 			(*status)->map[(*status)->py_coord - 1][(*status)->px_coord] = 'P';
 			(*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
 			(*status)->py_coord -= 1;
-    }
+		}
 		else if ((*status)->map[(*status)->py_coord
 			- 1][(*status)->px_coord] == 'E' && (*status)->collectible == flag)
 			exit(0);
-    else if ((*status)->map[(*status)->py_coord
+		else if ((*status)->map[(*status)->py_coord
 			- 1][(*status)->px_coord] == 'E' && (*status)->collectible != flag)
 			return ;
-
 		populate_window(status);
 	}
 }
@@ -51,20 +51,21 @@ static void	move_left(t_objects **status, size_t flag)
 			(*status)->map[(*status)->py_coord][(*status)->px_coord - 1] = 'P';
 			(*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
 			(*status)->px_coord -= 1;
-			put_floor(status, (*status)->px_coord * 32, (*status)->py_coord * 32);
-      (*status)->collectible--;
+			put_floor(status, (*status)->px_coord * 32, (*status)->py_coord
+				* 32);
+			(*status)->collectible--;
 		}
 		else if ((*status)->map[(*status)->py_coord][(*status)->px_coord
 			- 1] == '0')
 		{
 			(*status)->map[(*status)->py_coord][(*status)->px_coord - 1] = 'P';
 			(*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
-      (*status)->px_coord -= 1;
-    }
-		else if ((*status)->map[(*status)->py_coord]
-      [(*status)->px_coord - 1] == 'E' && (*status)->collectible == flag)
+			(*status)->px_coord -= 1;
+		}
+		else if ((*status)->map[(*status)->py_coord][(*status)->px_coord
+			- 1] == 'E' && (*status)->collectible == flag)
 			exit(0);
-    else if ((*status)->map[(*status)->py_coord][(*status)->px_coord
+		else if ((*status)->map[(*status)->py_coord][(*status)->px_coord
 			- 1] == 'E' && (*status)->collectible != flag)
 			return ;
 		populate_window(status);
@@ -80,9 +81,10 @@ static void	move_right(t_objects **status, size_t flag)
 			(*status)->map[(*status)->py_coord][(*status)->px_coord + 1] = 'P';
 			(*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
 			(*status)->px_coord += 1;
-			put_floor(status, (*status)->px_coord * 32, (*status)->py_coord * 32);
-      (*status)->collectible--;
-    }
+			put_floor(status, (*status)->px_coord * 32, (*status)->py_coord
+				* 32);
+			(*status)->collectible--;
+		}
 		else if ((*status)->map[(*status)->py_coord][(*status)->px_coord
 			+ 1] == '0')
 		{
@@ -90,10 +92,10 @@ static void	move_right(t_objects **status, size_t flag)
 			(*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
 			(*status)->px_coord += 1;
 		}
-		else if ((*status)->map[(*status)->py_coord]
-      [(*status)->px_coord + 1] == 'E' && (*status)->collectible == flag)
+		else if ((*status)->map[(*status)->py_coord][(*status)->px_coord
+			+ 1] == 'E' && (*status)->collectible == flag)
 			exit(0);
-    else if ((*status)->map[(*status)->py_coord][(*status)->px_coord
+		else if ((*status)->map[(*status)->py_coord][(*status)->px_coord
 			+ 1] == 'E' && (*status)->collectible != flag)
 			return ;
 		populate_window(status);
@@ -108,9 +110,10 @@ static void	move_down(t_objects **status, size_t flag)
 		{
 			(*status)->map[(*status)->py_coord + 1][(*status)->px_coord] = 'P';
 			(*status)->map[(*status)->py_coord][(*status)->px_coord] = '0';
-      (*status)->py_coord += 1;
-			put_floor(status, (*status)->px_coord * 32, (*status)->py_coord * 32);
-      (*status)->collectible--;
+			(*status)->py_coord += 1;
+			put_floor(status, (*status)->px_coord * 32, (*status)->py_coord
+				* 32);
+			(*status)->collectible--;
 		}
 		else if ((*status)->map[(*status)->py_coord
 			+ 1][(*status)->px_coord] == '0')
@@ -122,7 +125,7 @@ static void	move_down(t_objects **status, size_t flag)
 		else if ((*status)->map[(*status)->py_coord
 			+ 1][(*status)->px_coord] == 'E' && (*status)->collectible == flag)
 			exit(0);
-    else if ((*status)->map[(*status)->py_coord
+		else if ((*status)->map[(*status)->py_coord
 			+ 1][(*status)->px_coord] == 'E' && (*status)->collectible != flag)
 			return ;
 		populate_window(status);
@@ -131,11 +134,11 @@ static void	move_down(t_objects **status, size_t flag)
 
 int	key_press(int keycode, t_objects **status)
 {
-  size_t flag;
-  static int steps = -1;
+	size_t		flag;
+	static int	steps = 1;
 
-  flag = 0;
-    // step_printer(&steps);
+	flag = 0;
+	step_printer(steps);
 	if (keycode == K_A)
 		move_left(status, flag);
 	else if (keycode == K_S)
@@ -157,5 +160,6 @@ int	key_press(int keycode, t_objects **status)
 		move_north(status, flag);
 	else if (keycode == ARROW_KEY_DOWN)
 		move_down(status, flag);
+	steps++;
 	return (0);
 }

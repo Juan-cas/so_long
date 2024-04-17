@@ -6,11 +6,12 @@
 /*   By: juan-cas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 03:16:16 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/14 00:17:29 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/17 08:07:54 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
+
 /*a function that uses the read function to read buffer_size from the file
  * and checks for new line*/
 char	*reader(int fd, char *saver)
@@ -39,6 +40,7 @@ char	*reader(int fd, char *saver)
 	}
 	return (saver);
 }
+
 /*this function was made to protect all the mallocs made when returning a line*/
 char	*mprotect(char *line, char **saver, int i)
 {
@@ -59,6 +61,7 @@ char	*mprotect(char *line, char **saver, int i)
 	free(oldptr);
 	return (line);
 }
+
 /*this function is used to return the final line of the file*/
 char	*finalline(char *line, char **saver)
 {
@@ -83,6 +86,7 @@ char	*finalline(char *line, char **saver)
 		return (free(*saver), *saver = NULL, NULL);
 	return (line);
 }
+
 /*this function opens the file and starts reading the entire map and returning
  * a line each time its called*/
 char	*get_next_line(int fd)

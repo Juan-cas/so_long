@@ -6,11 +6,12 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 00:38:19 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/14 00:25:07 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/17 08:08:19 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
+
 /*function made to check if the map's objects meet the asigment rules
  * 1 player / 1 exit / at least 1 collectible*/
 static void	objects_check(t_objects *status)
@@ -22,6 +23,7 @@ static void	objects_check(t_objects *status)
 	if (status->collectible == 0)
 		ft_error(3);
 }
+
 /*funtion to check if the map only contains valid characters*/
 static void	is_map_valid(char *map, t_objects *status)
 {
@@ -40,6 +42,7 @@ static void	is_map_valid(char *map, t_objects *status)
 		j++;
 	}
 }
+
 /*fimctopm to check the maps length is uniform*/
 static void	parsing(char **map, t_objects *status)
 {
@@ -57,6 +60,7 @@ static void	parsing(char **map, t_objects *status)
 	}
 	objects_check(status);
 }
+
 /*this function checks how many lines the matrix is*/
 static size_t	how_many_lines(char **map)
 {
@@ -67,6 +71,7 @@ static size_t	how_many_lines(char **map)
 		;
 	return (lines);
 }
+
 /*his funtion is used to parse the entire map calling the ones above*/
 void	map_check(char **map, t_objects **status)
 {
