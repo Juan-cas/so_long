@@ -5,17 +5,15 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="soolong" targetName="mlx_linux_clean" />
-      <config projectName="soolong" targetName="bonus" />
-      <config projectName="soolong" targetName="libft_fclean" />
-      <config projectName="soolong" targetName="mlx_linux" />
-      <config projectName="soolong" targetName="libft" />
-      <config projectName="soolong" targetName="fclean" />
-      <config projectName="soolong" targetName="libft_clean" />
-      <config projectName="soolong" targetName="all" />
-      <config projectName="soolong" targetName="re" />
-      <config projectName="soolong" targetName="rebonus" />
-      <config projectName="soolong" targetName="solong" />
+      <config projectName="so_long" targetName="solong" />
+      <config projectName="so_long" targetName="libft" />
+      <config projectName="so_long" targetName="fclean" />
+      <config projectName="so_long" targetName="bonus" />
+      <config projectName="so_long" targetName="libft_clean" />
+      <config projectName="so_long" targetName="re" />
+      <config projectName="so_long" targetName="libft_fclean" />
+      <config projectName="so_long" targetName="rebonus" />
+      <config projectName="so_long" targetName="all" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -25,79 +23,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4d7acb9-12b1-4bc5-95d5-e9cf605850f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_atoi.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_bzero.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_calloc.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_isalnum.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_isalpha.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_isascii.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_isdigit.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_isprint.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_itoa.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_memchr.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_memcmp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_memcpy.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_memmove.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_memset.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_putchar_fd.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_putendl_fd.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_putnbr_fd.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_putstr_fd.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_split.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_strchr.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_strdup.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_striteri.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_strjoin.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_strlcat.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_strlcpy.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_strlen.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_strmapi.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_strncmp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_strnstr.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_strrchr.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_strtrim.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_substr.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_tolower.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libft/ft_toupper.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/libmlx.a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/libmlx_Linux.a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_clear_window.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_destroy_display.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_destroy_image.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_destroy_window.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_expose_hook.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_flush_event.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_get_color_value.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_get_data_addr.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_hook.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_init.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_int_anti_resize_win.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_int_do_nothing.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_int_get_visual.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_int_param_event.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_int_set_win_event_mask.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_int_str_to_wordtab.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_int_wait_first_expose.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_key_hook.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_loop.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_loop_hook.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_mouse.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_mouse_hook.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_new_image.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_new_window.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_pixel_put.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_put_image_to_window.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_rgb.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_screen_size.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_set_font.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_string_put.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/obj/mlx_xpm.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/test/main.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mlx_linux/test/mlx-test" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/obj/error/ft_error.o" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/obj/main.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/parsing/get_next_line.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/parsing/map_maker.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/error/ft_exit.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libft/libft.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solong" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parsing/correct_map_template.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsing/correct_map_template.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parsing/get_next_line.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsing/get_next_line.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parsing/line1.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsing/line1.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parsing/map_check.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsing/map_check.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parsing/map_maker.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsing/map_maker.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parsing/parsing.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsing/parsing.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parsing/solong.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsing/solong.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/solong.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/solong.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/append.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/append.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/coords_x_y_.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/coords_x_y_.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/find_coords.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/find_coords.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/find_n.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/find_n.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/flood_fill.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/flood_fill.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/free_data.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/free_data.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/imagetowindow.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/map_populator.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/map_populator.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/mlx_utils.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/step_printer.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/step_printer.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,24 +73,19 @@
         <entry>
           <key>
             <ExternalProjectPojo>
-              <option name="name" value="soolong" />
+              <option name="name" value="so_long" />
               <option name="path" value="$PROJECT_DIR$" />
             </ExternalProjectPojo>
           </key>
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="soolong" />
+                <option name="name" value="so_long" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
             </list>
           </value>
         </entry>
-      </map>
-    </option>
-    <option name="projectSyncType">
-      <map>
-        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
       </map>
     </option>
   </component>
@@ -161,79 +108,74 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Native Application.all.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/mnt/Storage/42cursus/soolong",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Native Application.all.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/Storage/42cursus/soolong&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Native Application.all">
-    <configuration name="all" type="CLionNativeAppRunConfigurationType" PROGRAM_PARAMS="&quot;map.ber&quot;" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soolong" TARGET_NAME="all" CONFIG_NAME="all" version="1" RUN_PATH="$PROJECT_DIR$/solong">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="all" type="CLionNativeAppRunConfigurationType" PROGRAM_PARAMS="&quot;map.ber&quot;" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="all" CONFIG_NAME="all" version="1" RUN_PATH="$PROJECT_DIR$/solong">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="bonus" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soolong" TARGET_NAME="bonus" CONFIG_NAME="bonus" version="1">
+    <configuration name="bonus" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="bonus" CONFIG_NAME="bonus" version="1">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="fclean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soolong" TARGET_NAME="fclean" CONFIG_NAME="fclean" version="1">
+    <configuration name="fclean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="fclean" CONFIG_NAME="fclean" version="1">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="libft" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soolong" TARGET_NAME="libft" CONFIG_NAME="libft" version="1">
+    <configuration name="libft" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="libft" CONFIG_NAME="libft" version="1">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="libft_clean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soolong" TARGET_NAME="libft_clean" CONFIG_NAME="libft_clean" version="1">
+    <configuration name="libft_clean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="libft_clean" CONFIG_NAME="libft_clean" version="1">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="libft_fclean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soolong" TARGET_NAME="libft_fclean" CONFIG_NAME="libft_fclean" version="1">
+    <configuration name="libft_fclean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="libft_fclean" CONFIG_NAME="libft_fclean" version="1">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="mlx_linux" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soolong" TARGET_NAME="mlx_linux" CONFIG_NAME="mlx_linux" version="1">
+    <configuration name="re" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="re" CONFIG_NAME="re" version="1">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="mlx_linux_clean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soolong" TARGET_NAME="mlx_linux_clean" CONFIG_NAME="mlx_linux_clean" version="1">
+    <configuration name="rebonus" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="rebonus" CONFIG_NAME="rebonus" version="1">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="re" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soolong" TARGET_NAME="re" CONFIG_NAME="re" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="rebonus" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soolong" TARGET_NAME="rebonus" CONFIG_NAME="rebonus" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="solong" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="soolong" TARGET_NAME="solong" CONFIG_NAME="solong" version="1">
+    <configuration name="solong" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="so_long" TARGET_NAME="solong" CONFIG_NAME="solong" version="1">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
@@ -245,8 +187,6 @@
       <item itemvalue="Native Application.libft" />
       <item itemvalue="Native Application.libft_clean" />
       <item itemvalue="Native Application.libft_fclean" />
-      <item itemvalue="Native Application.mlx_linux" />
-      <item itemvalue="Native Application.mlx_linux_clean" />
       <item itemvalue="Native Application.re" />
       <item itemvalue="Native Application.rebonus" />
       <item itemvalue="Native Application.solong" />
@@ -267,6 +207,8 @@
       <workItem from="1712663056141" duration="335000" />
       <workItem from="1712710575099" duration="2439000" />
       <workItem from="1712715169328" duration="1689000" />
+      <workItem from="1713312580839" duration="198000" />
+      <workItem from="1713312783461" duration="1444000" />
     </task>
     <servers />
   </component>
@@ -275,17 +217,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/parsing/solong.c</url>
-          <line>38</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

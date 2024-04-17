@@ -6,12 +6,12 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 03:41:20 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/12 03:16:33 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/14 00:27:44 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
-
+/* this function is used to create and return the matrix of the map*/
 static char	**map_matrix(char **str)
 {
 	char	**map;
@@ -24,7 +24,7 @@ static char	**map_matrix(char **str)
 	free(*str);
 	return (map);
 }
-
+/*this function is used to get all the lines in the file*/
 char	**map_maker(int fd)
 {
 	char	*str;

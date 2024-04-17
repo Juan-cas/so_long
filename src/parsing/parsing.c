@@ -6,12 +6,13 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 00:45:55 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/12 03:16:38 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/14 00:30:43 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
-
+/*this function checks if the file is valid and it has the permisions
+ * while returning the matrix created from the map file*/
 char	**lets_parse_map(char **argv)
 {
 	int		fd;
@@ -30,7 +31,7 @@ char	**lets_parse_map(char **argv)
 		return (NULL);
 	return (map);
 }
-
+/*parses all the data toguether by calling each function*/
 void	lets_parse_data(char **map, t_objects **status)
 {
 	map_check(map, status);
@@ -40,7 +41,8 @@ void	lets_parse_data(char **map, t_objects **status)
 	final_check(map, status);
 	free_coords(&(*status)->next);
 }
-
+/*a function that starts the parsing process and initiates
+ * the structures*/
 char	**init_parser(char **argv, t_objects **status)
 {
 	char	**map;

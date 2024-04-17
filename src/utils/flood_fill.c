@@ -6,11 +6,15 @@
 /*   By: juan-cas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 03:15:46 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/12 03:15:48 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/14 00:04:38 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
+
+/*a basic floodfill algorithm that paints the whole map from the player
+ * starting position until it has gone through all the squares he can
+ * posibly enter to*/
 
 static void	crawler(char **map, size_t y, size_t x, t_objects **status)
 {
@@ -35,6 +39,10 @@ static void	crawler(char **map, size_t y, size_t x, t_objects **status)
 	crawler(map, y, x + 1, status);
 	crawler(map, y, x - 1, status);
 }
+
+/* verifier:
+ * a funtion that gets the coordinates of all the collectibles
+ * then executes the floodfill and checks the number of collectibles*/
 
 void	flood_fill(char **map, t_objects **status)
 {

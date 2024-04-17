@@ -6,11 +6,15 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 09:22:06 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/12 03:15:58 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/13 22:53:41 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
+
+/* appender:
+ * this function appends both s1 and s2 and creates a allocated string while
+ * freeing s1 & s2*/
 
 char	*append(char *s1, char *s2)
 {

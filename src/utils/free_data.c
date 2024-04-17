@@ -12,6 +12,9 @@
 
 #include "../solong.h"
 
+/*collectibles liberator
+ * this function free all the extra nodes we created to store the locations of
+ * the collectibles */
 void	free_coords(t_objects **nodes)
 {
 	t_objects	*prev;

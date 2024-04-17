@@ -33,7 +33,8 @@ $(SRC_DIR)/utils/mlx_utils.c \
 $(SRC_DIR)/parsing/parsing.c \
 $(SRC_DIR)/utils/imagetowindow.c \
 $(SRC_DIR)/utils/map_populator.c \
-$(SRC_DIR)/movements/movements.c
+$(SRC_DIR)/movements/movements.c \
+$(SRC_DIR)/error/ft_exit.c \
 
 # Object files
 OBJ_FILES := $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_FILES))

@@ -6,7 +6,7 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 00:52:32 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/08 21:13:54 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/17 02:36:54 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ char	**lets_parse_map(char **argv);
 char	**init_parser(char **argv, t_objects **status);
 
 //utils
+int	ft_exit(t_objects **status);
 char	**map_maker(int fd);
 char	*get_next_line(int fd);
 void	matrix_clear(char **matrix);

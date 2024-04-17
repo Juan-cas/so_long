@@ -6,12 +6,16 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 06:12:16 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/12 03:14:25 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/13 23:00:01 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
 
+/* sorter AND populate
+ * this function receives c and compares it againts the sprite that will be
+ * printed, aside from width & height to locate where the image will be
+ * printed in the window*/
 static void	sort_populate(char c, int width, int height, t_objects **status)
 {
 	if (c == '0')
@@ -34,6 +38,10 @@ static void	sort_populate(char c, int width, int height, t_objects **status)
 			(*status)->textures[4], width, height);
 }
 
+/* window printer
+ *
+ * this function is the one responsible for locating the X & Y axis
+ * and use that while sending the character of the map.*/
 void	populate_window(t_objects **status)
 {
 	int	i;
