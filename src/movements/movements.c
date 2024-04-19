@@ -14,9 +14,6 @@
 
 int	key_press(int keycode, t_objects **status)
 {
-	size_t	flag;
-
-	flag = 0;
 	if (keycode == K_A)
 		move_left(status);
 	else if (keycode == K_S)
