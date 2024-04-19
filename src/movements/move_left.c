@@ -6,13 +6,13 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:05:33 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/17 12:44:48 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:17:01 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
 
-static void left(char **map, size_t py_c, size_t px_c, t_objects **status)
+static void	left(char **map, size_t py_c, size_t px_c, t_objects **status)
 {
 	if (map[py_c][px_c - 1] == 'C')
 	{
@@ -29,18 +29,19 @@ static void left(char **map, size_t py_c, size_t px_c, t_objects **status)
 	}
 	else
 		check_exit(map, py_c, px_c - 1, status);
-
+	step_printer((*status)->steps);
+	(*status)->steps++;
 	populate_window(status);
 }
 
 void	move_left(t_objects **status)
 {
-	size_t py_c;
-	size_t px_c;
+	size_t	py_c;
+	size_t	px_c;
 
 	py_c = (*status)->py_coord;
 	px_c = (*status)->px_coord;
-	if ((*status)->map[(*status)->py_coord ][(*status)->px_coord - 1] != '1')
+	if ((*status)->map[(*status)->py_coord][(*status)->px_coord - 1] != '1')
 	{
 		left((*status)->map, py_c, px_c, status);
 	}

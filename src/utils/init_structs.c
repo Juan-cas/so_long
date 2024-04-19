@@ -6,7 +6,7 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 14:28:31 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/12 03:15:42 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:17:39 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	init_status(t_objects **status)
 	(*status)->init_pos_flood = 0;
 	(*status)->ey_coord = 0;
 	(*status)->ex_coord = 0;
+	(*status)->steps = 1;
 }
 
 void	assign_textures(t_objects **status, int j)
@@ -36,19 +37,19 @@ void	assign_textures(t_objects **status, int j)
 
 	if (j == 0)
 		(*status)->textures[0] = mlx_xpm_file_to_image((*status)->mlx_ptr,
-				floor_sprite, &width, &height);
+				FLOOR_SPRITE, &width, &height);
 	if (j == 1)
 		(*status)->textures[1] = mlx_xpm_file_to_image((*status)->mlx_ptr,
-				player_sprite, &width, &height);
+				PLAYER_SPRITE, &width, &height);
 	if (j == 2)
 		(*status)->textures[2] = mlx_xpm_file_to_image((*status)->mlx_ptr,
-				potion_sprite, &width, &height);
+				POTION_SPRITE, &width, &height);
 	if (j == 3)
 		(*status)->textures[3] = mlx_xpm_file_to_image((*status)->mlx_ptr,
-				wall_sprite, &width, &height);
+				WALL_SPRITE, &width, &height);
 	if (j == 4)
 		(*status)->textures[4] = mlx_xpm_file_to_image((*status)->mlx_ptr,
-				exit_door_sprite, &width, &height);
+				EXIT_DOOR_SPRITE, &width, &height);
 	if (!(*status)->textures[j])
 		exit(1);
 }

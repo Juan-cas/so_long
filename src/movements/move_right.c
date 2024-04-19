@@ -6,13 +6,13 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:26:54 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/17 12:44:48 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:17:06 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
 
-static void right(char **map, size_t py_c, size_t px_c, t_objects **status)
+static void	right(char **map, size_t py_c, size_t px_c, t_objects **status)
 {
 	if (map[py_c][px_c + 1] == 'C')
 	{
@@ -21,7 +21,7 @@ static void right(char **map, size_t py_c, size_t px_c, t_objects **status)
 		(*status)->px_coord += 1;
 		(*status)->collectible--;
 	}
-	else if (map[py_c][px_c - 1] == '0')
+	else if (map[py_c][px_c + 1] == '0')
 	{
 		map[py_c][px_c + 1] = 'P';
 		map[py_c][px_c] = '0';
@@ -29,14 +29,15 @@ static void right(char **map, size_t py_c, size_t px_c, t_objects **status)
 	}
 	else
 		check_exit(map, py_c, px_c + 1, status);
-
+	step_printer((*status)->steps);
+	(*status)->steps++;
 	populate_window(status);
 }
 
 void	move_right(t_objects **status)
 {
-	size_t py_c;
-	size_t px_c;
+	size_t	py_c;
+	size_t	px_c;
 
 	py_c = (*status)->py_coord;
 	px_c = (*status)->px_coord;

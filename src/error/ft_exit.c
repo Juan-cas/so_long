@@ -16,7 +16,6 @@
 int	ft_exit(t_objects **status)
 {
 	mlx_destroy_window((*status)->mlx_ptr, (*status)->win_ptr);
-	printf("You gave up :(\n");
-	printf("Is the map to hard for you?\n");
+	printf("don't give up my dudette, you can do it just try again!\n");
 	exit(EXIT_SUCCESS);
 }

@@ -78,18 +78,14 @@ void	map_check(char **map, t_objects **status)
 	(*status)->map_lines = how_many_lines(map);
 	(*status)->map_length = ft_strlen(map[0]);
 	parsing(map, (*status));
-	if ((*status)->map_length > 60)
+	if ((*status)->map_length > 80)
 	{
 		ft_putstr_fd("map length is above what can be rendered", 2);
-		matrix_clear(map);
-		free(status);
 		exit(1);
 	}
-	if ((*status)->map_lines > 30)
+	if ((*status)->map_lines > 41)
 	{
 		ft_putstr_fd("map height is above what can be rendered", 2);
-		matrix_clear(map);
-		free(status);
 		exit(1);
 	}
 }

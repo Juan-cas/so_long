@@ -6,13 +6,13 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:34:13 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/17 12:44:48 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:16:55 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
 
-static void down(char **map, size_t py_c, size_t px_c, t_objects **status)
+static void	down(char **map, size_t py_c, size_t px_c, t_objects **status)
 {
 	if (map[py_c + 1][px_c] == 'C')
 	{
@@ -29,14 +29,15 @@ static void down(char **map, size_t py_c, size_t px_c, t_objects **status)
 	}
 	else
 		check_exit(map, py_c + 1, px_c, status);
-
+	step_printer((*status)->steps);
+	(*status)->steps++;
 	populate_window(status);
 }
 
 void	move_down(t_objects **status)
 {
-	size_t py_c;
-	size_t px_c;
+	size_t	py_c;
+	size_t	px_c;
 
 	py_c = (*status)->py_coord;
 	px_c = (*status)->px_coord;

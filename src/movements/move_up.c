@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   north_move.c                                       :+:      :+:    :+:   */
+/*   move_up.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan-cas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:27:12 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/17 12:43:21 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:17:11 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,15 @@ static void	north(char **map, size_t py_c, size_t px_c, t_objects **status)
 	}
 	else
 		check_exit(map, py_c - 1, px_c, status);
-
+	step_printer((*status)->steps);
+	(*status)->steps++;
 	populate_window(status);
 }
 
 void	move_north(t_objects **status)
 {
-	size_t py_c;
-	size_t px_c;
+	size_t	py_c;
+	size_t	px_c;
 
 	py_c = (*status)->py_coord;
 	px_c = (*status)->px_coord;
