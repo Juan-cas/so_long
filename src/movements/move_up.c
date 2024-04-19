@@ -12,7 +12,7 @@
 
 #include "../solong.h"
 
-static void	north(char **map, size_t py_c, size_t px_c, t_objects **status)
+static void	up(char **map, size_t py_c, size_t px_c, t_objects **status)
 {
 	if (map[py_c - 1][px_c] == 'C')
 	{
@@ -43,6 +43,6 @@ void	move_north(t_objects **status)
 	px_c = (*status)->px_coord;
 	if ((*status)->map[(*status)->py_coord - 1][(*status)->px_coord] != '1')
 	{
-		north((*status)->map, py_c, px_c, status);
+		up((*status)->map, py_c, px_c, status);
 	}
 }
