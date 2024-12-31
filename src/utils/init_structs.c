@@ -6,11 +6,16 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 14:28:31 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/17 18:17:39 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/07/14 18:36:20 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
+
+/**
+ * @brief initiates the structure in preparation for the map.
+ * @param status all the map information needed.
+ */
 
 void	init_status(t_objects **status)
 {
@@ -29,6 +34,12 @@ void	init_status(t_objects **status)
 	(*status)->ex_coord = 0;
 	(*status)->steps = 1;
 }
+
+/**
+ * @brief saves the images into pointers.
+ * @param status the structure that will save the pointers.
+ * @param j what texture it will add from 0 to 4.
+ */
 
 void	assign_textures(t_objects **status, int j)
 {
@@ -51,8 +62,17 @@ void	assign_textures(t_objects **status, int j)
 		(*status)->textures[4] = mlx_xpm_file_to_image((*status)->mlx_ptr,
 				EXIT_DOOR_SPRITE, &width, &height);
 	if (!(*status)->textures[j])
+	{
+		ft_error(6);
 		exit(1);
+	}
 }
+
+/**
+ * @brief initiates the images, and rezies them
+ * @param status the structure containing the images.
+ * @param map_board the map matrix containing where will each image go.
+ */
 
 void	textures_init(t_objects **status, char **map_board)
 {

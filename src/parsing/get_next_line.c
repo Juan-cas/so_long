@@ -87,8 +87,11 @@ char	*finalline(char *line, char **saver)
 	return (line);
 }
 
-/*this function opens the file and starts reading the entire map and returning
- * a line each time its called*/
+/**
+ * @brief function gets a line from the fd.
+ * @param fd the file descriptor that contains the
+ * opened file that will be read.
+ */
 char	*get_next_line(int fd)
 {
 	static char	*saver = NULL;

@@ -6,14 +6,18 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 00:38:19 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/17 08:08:19 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/11/24 00:04:27 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
 
-/*function made to check if the map's objects meet the asigment rules
- * 1 player / 1 exit / at least 1 collectible*/
+/**
+ * @brief checks the map
+ * this function ensures there are at least 1 player, 1 exit, 1 collectible
+ *  in the map
+ *  @param status the structure containing all the data from the map.
+ */
 static void	objects_check(t_objects *status)
 {
 	if (status->player != 1)
@@ -25,6 +29,10 @@ static void	objects_check(t_objects *status)
 }
 
 /*funtion to check if the map only contains valid characters*/
+/**
+ * @brief checks if the map contains only valid characters
+ * @param status the structure that contains all the data.
+ */
 static void	is_map_valid(char *map, t_objects *status)
 {
 	size_t	j;
@@ -43,7 +51,11 @@ static void	is_map_valid(char *map, t_objects *status)
 	}
 }
 
-/*fimctopm to check the maps length is uniform*/
+/**
+ * @brief parses the map and the structure containing the map.
+ * @param status structure containing the map data.
+ * @param map the matrix containing the map.
+ */
 static void	parsing(char **map, t_objects *status)
 {
 	size_t	i;
@@ -53,7 +65,7 @@ static void	parsing(char **map, t_objects *status)
 	{
 		if (ft_strlen(map[i]) != status->map_length)
 			ft_error(3);
-		else if ((i == 0 || i == status->map_lines) && !line1(map[i++]))
+		else if ((i == 0 || i == status->map_lines) && !line1(map[i]))
 			ft_error(3);
 		else
 			is_map_valid(map[i], status);
@@ -61,7 +73,10 @@ static void	parsing(char **map, t_objects *status)
 	objects_check(status);
 }
 
-/*this function checks how many lines the matrix is*/
+/**
+ * @brief checks how many lines the matrix has.
+ * @param map the map matrix.
+ */
 static size_t	how_many_lines(char **map)
 {
 	size_t	lines;
@@ -72,7 +87,13 @@ static size_t	how_many_lines(char **map)
 	return (lines);
 }
 
-/*his funtion is used to parse the entire map calling the ones above*/
+/**
+ * @brief parses the entire map
+ * This function checks the entire map, and that the data we will handle
+ * passes all of our checks, before proceeding.
+ * @param status structure containing our map data.
+ * @param map our map matrix.
+ */
 void	map_check(char **map, t_objects **status)
 {
 	(*status)->map_lines = how_many_lines(map);

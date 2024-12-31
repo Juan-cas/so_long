@@ -1,7 +1,7 @@
 # Compiler and flags
 CC := gcc
-CFLAGS := -Wall -Wextra -Werror -g3 -fsanitize=address
-LFLAGS := -lmlx -framework OpenGL -framework AppKit
+CFLAGS := -Wall -Wextra -Werror -g3 -fsanitize=address,leak
+LFLAGS := -L$(MLX_DIR) -lmlx -L$(LIBFT_DIR) -lft -L/usr/lib/x11 -lXext -lX11
 
 # Directories
 SRC_DIR := src
@@ -38,16 +38,16 @@ $(SRC_DIR)/movements/check_exit.c \
 $(SRC_DIR)/movements/move_up.c \
 $(SRC_DIR)/movements/move_down.c \
 $(SRC_DIR)/movements/move_left.c \
-$(SRC_DIR)/movements/move_right.c \
+$(SRC_DIR)/movements/move_right.c
 
 # Object files
 OBJ_FILES := $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_FILES))
 
 # Libraries
-LIBS := -L$(LIBFT_DIR) -lft 
+LIBS := -L$(LIBFT_DIR) -lft -L$(MLX_DIR) -lmlx
 
 # Executable
-TARGET := solong
+TARGET := so_long
 NAME := $(TARGET)
 
 # Conditional compilation based on target
@@ -57,22 +57,20 @@ else ifeq ($(MAKECMDGOALS),optimize)
  CFLAGS += -O2
 endif
 
-all: libft $(TARGET)
+all: $(MLX_DIR)/libmlx.a $(LIBFT_DIR)/libft.a $(TARGET)
 
-# Libft targets
-libft:
+# Build mlx_linux
+$(MLX_DIR)/libmlx.a:
+	$(MAKE) -C $(MLX_DIR)
+
+# Build libft
+$(LIBFT_DIR)/libft.a:
 	$(MAKE) -C $(LIBFT_DIR)
 
-libft_clean:
-	$(MAKE) -C $(LIBFT_DIR) clean
-
-libft_fclean:
-	$(MAKE) -C $(LIBFT_DIR) fclean
-
-clean: libft_clean 
+clean: libft_clean mlx_clean
 	rm -rf $(OBJ_DIR)
 
-fclean: clean libft_fclean 
+fclean: libft_fclean mlx_fclean clean
 	rm -f $(TARGET)
 
 re: fclean all
@@ -81,6 +79,20 @@ bonus:: CFLAGS += -D BONUS=1
 bonus: re
 
 rebonus: fclean bonus
+
+# Libft targets
+libft_clean:
+	$(MAKE) -C $(LIBFT_DIR) clean
+
+libft_fclean:
+	$(MAKE) -C $(LIBFT_DIR) fclean
+
+# mlx_linux targets
+mlx_clean:
+	$(MAKE) -C $(MLX_DIR) clean
+
+mlx_fclean:
+	$(MAKE) -C $(MLX_DIR) fclean
 
 # Build rule
 $(TARGET): $(OBJ_FILES)
@@ -92,5 +104,4 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Phony targets
-.PHONY: all clean fclean re bonus rebonus
-
+.PHONY: all clean fclean re bonus rebonus libft_clean libft_fclean mlx_clean mlx_fclean

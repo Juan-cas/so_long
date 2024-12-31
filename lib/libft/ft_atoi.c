@@ -6,12 +6,12 @@
 /*   By: juan-cas <juan-cas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 21:50:51 by juan-cas          #+#    #+#             */
-/*   Updated: 2023/09/08 21:50:51 by juan-cas         ###   ########.fr       */
+/*   Updated: 2023/12/09 18:08:56 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_atoi(const char *str)
 {
@@ -20,7 +20,7 @@ int	ft_atoi(const char *str)
 	int		result;
 	char	*str1;
 
-	str1 = (char *) str;
+	str1 = (char *)str;
 	i = 0;
 	sig = 1;
 	result = 0;
@@ -42,10 +42,10 @@ int	ft_atoi(const char *str)
 
 /*int main()
 {
-    char str[] = "    -1234asda123";
-    int result = ft_atoi(str);
+	char str[] = "    -1234asda123";
+	int result = ft_atoi(str);
 
-    printf("the str to convert is %s\n", str);
-    printf("the result is: %d\n", result);
-    return (0);
+	printf("the str to convert is %s\n", str);
+	printf("the result is: %d\n", result);
+	return (0);
 }*/

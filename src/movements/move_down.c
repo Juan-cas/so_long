@@ -6,7 +6,7 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:34:13 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/17 18:16:55 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/11/21 00:36:58 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,21 @@ static void	down(char **map, size_t py_c, size_t px_c, t_objects **status)
 	}
 	else
 		check_exit(map, py_c + 1, px_c, status);
-	step_printer((*status)->steps);
-	(*status)->steps++;
+	if (map[py_c + 1][px_c] != 'E')
+	{
+		step_printer((*status)->steps);
+		(*status)->steps++;
+	}
 	populate_window(status);
 }
 
+/**
+ * @brief moves the character down if possible
+ * This function rewrites both the next letter down and the previous
+ * letter where the character was, allowing the map to display the player
+ * in a new place.
+ * @param status structure containing the data of the map.
+ */
 void	move_down(t_objects **status)
 {
 	size_t	py_c;

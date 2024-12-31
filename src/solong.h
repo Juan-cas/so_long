@@ -6,7 +6,7 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 00:52:32 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/17 18:16:39 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/11/21 00:41:23 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,8 @@
 #  define BUFFER_SIZE 10000
 # endif
 
-# include "../lib/mlx_macos/mlx.h"
-# define K_A 0
-# define K_S 1
-# define K_D 2
-# define K_W 13
-# define ARROW_KEY_LEFT 123
-# define ARROW_KEY_RIGHT 124
-# define ARROW_KEY_UP 126
-# define ARROW_KEY_DOWN 125
-# define KEY_ESC 53
-
-# define MLX_SYNC_IMAGE_WRITABLE 1
-# define MLX_SYNC_WIN_FLUSH_CMD 2
-# define MLX_SYNC_WIN_CMD_COMPLETED 3
 # define FLOOR_SPRITE "./lib/assets/floor.xpm"
 # define PLAYER_SPRITE "./lib/assets/player.xpm"
-# define ENEMY_SPRITE "./lib/assets/Juan-heroe-ogro.xpm"
 # define POTION_SPRITE "./lib/assets/collectible.xpm"
 # define EXIT_DOOR_SPRITE "./lib/assets/exit.xpm"
 # define WALL_SPRITE "./lib/assets/wall.xpm"
@@ -51,6 +36,9 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "../lib/mlx_linux/mlx.h"
+# include <X11/keysym.h>
+# include <X11/X.h>
 
 typedef struct game_objects
 {
@@ -97,8 +85,8 @@ void					find_coords_p(char **map, t_objects **status);
 void					find_coords_e(char **map, t_objects **status);
 void					free_coords(t_objects **nodes);
 void					lets_parse_data(char **map, t_objects **status);
-char					**lets_parse_map(char **argv);
-char					**init_parser(char **argv, t_objects **status);
+char					**lets_parse_map(char **argv, int fd);
+char					**init_parser(char **argv, t_objects **status, int fd);
 
 // utils
 int						ft_exit(t_objects **status);

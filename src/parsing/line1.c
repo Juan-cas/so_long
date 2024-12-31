@@ -12,8 +12,11 @@
 
 #include "../solong.h"
 
-/*function to check the first and the last lines of a file, to check if its
- * only walls*/
+/**
+ * @brief checks top and bottom walls
+ * This function ensures that the top and bottom walls are made of 1
+ * characters.
+ */
 int	line1(const char *line)
 {
 	int	i;

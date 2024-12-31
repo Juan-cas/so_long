@@ -6,7 +6,7 @@
 /*   By: juan-cas <juan-cas@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:26:54 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/17 18:17:06 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/07/14 17:33:22 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,21 @@ static void	right(char **map, size_t py_c, size_t px_c, t_objects **status)
 	}
 	else
 		check_exit(map, py_c, px_c + 1, status);
-	step_printer((*status)->steps);
-	(*status)->steps++;
+	if (map[py_c][px_c + 1] != 'E')
+	{
+		step_printer((*status)->steps);
+		(*status)->steps++;
+	}
 	populate_window(status);
 }
 
+/**
+ * @brief moves the character right if possible
+ * This function rewrites both the next letter right and the previous
+ * letter where the character was, allowing the map to display the player
+ * in a new place.
+ * @param status structure containing the data of the map.
+ */
 void	move_right(t_objects **status)
 {
 	size_t	py_c;

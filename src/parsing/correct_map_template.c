@@ -6,13 +6,15 @@
 /*   By: juan-cas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 03:16:10 by juan-cas          #+#    #+#             */
-/*   Updated: 2024/04/17 08:07:49 by juan-cas         ###   ########.fr       */
+/*   Updated: 2024/11/21 00:32:52 by juan-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
 
-/*this function checks if the character is '0' -> (road)*/
+/**
+ * @brief checks if character is 0 -> road
+ */
 int	is0(char c)
 {
 	if (c == '0')
@@ -20,7 +22,9 @@ int	is0(char c)
 	return (0);
 }
 
-/*this function checks if the character is 'E' -> (exit)*/
+/**
+ * @brief checks if character is E -> exit
+ */
 int	ise(char c, t_objects *status)
 {
 	if (c == 'E')
@@ -31,7 +35,9 @@ int	ise(char c, t_objects *status)
 	return (0);
 }
 
-/*this function checks if the character is 'C' -> (collectible)*/
+/**
+ * @brief checks if character is C -> Collectible
+ */
 int	isc(char c, t_objects *status)
 {
 	if (c == 'C')
@@ -42,7 +48,9 @@ int	isc(char c, t_objects *status)
 	return (0);
 }
 
-/*this function checks if the character is 'P' -> (player)*/
+/**
+ * @brief checks if character is P -> Player
+ */
 int	isp(char c, t_objects *status)
 {
 	if (c == 'P')
@@ -53,7 +61,9 @@ int	isp(char c, t_objects *status)
 	return (0);
 }
 
-/*this function checks if the character is '1' -> (wall)*/
+/**
+ * @brief checks if character is 1 -> Wall
+ */
 int	is1(char c)
 {
 	if (c == '1')
